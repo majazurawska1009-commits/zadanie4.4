@@ -1,0 +1,31 @@
+h2
+{
+	font-size:40px;
+	color:#660099;
+}
+h1{
+	font-size:16px;
+	color:#66CCCC;
+	font-family: Arial;
+
+}
+h3
+{
+	font-size:20px;
+	color:#CC99FF;
+	font-family:Helvetica;
+}
+td
+{
+	background-color: pink;
+}
+th
+{
+	background-color:#CC99FF;
+	color:#FFCCCC;
+}
+h5
+{
+	color:#339999;
+	font-size:20px;
+}

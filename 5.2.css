@@ -8,8 +8,8 @@ li a
 {
 	display: block;
 	width: 100px;
-	font-size: lem;
-	text-allign: center;
+	font-size: lcm;
+	text-align: center;
 	text-decoration: none;
 	color: white;
 	background-color: pink;
@@ -53,9 +53,10 @@ width: 20%;
 	clear: both;
 	background: #ffcbcb;
 	text-align: center;
-	main-height: 50px;
+	min-height: 50px;
 }
 	
+
 
 
 

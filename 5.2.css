@@ -31,7 +31,7 @@ li a:hover
 	text-align: center;
 	min-height: 100px;
 	font-size: xx-large;
-	font-color: teal;
+	color: teal;
 }
 
 #menu
@@ -56,9 +56,10 @@ width: 20%;
 	background: #ffcbcb;
 	text-align: center;
 	min-height: 50px;
-	font-color: white;
+	color: white;
 }
 	
+
 
 
 

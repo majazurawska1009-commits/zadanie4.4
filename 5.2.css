@@ -30,7 +30,8 @@ li a:hover
 	background-image: url("szkola.jpg");
 	text-align: center;
 	min-height: 100px;
-	font-size: x-large;
+	font-size: xx-large;
+	font-color: teal;
 }
 
 #menu
@@ -55,9 +56,10 @@ width: 20%;
 	background: #ffcbcb;
 	text-align: center;
 	min-height: 50px;
-	text-color: white;
+	font-color: white;
 }
 	
+
 
 
 

@@ -58,7 +58,23 @@ width: 20%;
 	min-height: 50px;
 	color: white;
 }
+
+#frame 
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80vw;
+  height: 80vh;
+
+  border: none;
+  display: none;
+  z-index: 1000;
+}
 	
+
 
 
 

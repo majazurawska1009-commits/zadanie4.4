@@ -59,7 +59,7 @@ li a:hover {
 #planFrame {
   position: fixed;
   top: 50px;       
-  height: 320px;    
+  height: 150px;    
 
   left: 240px;
   width: 70%;
@@ -67,6 +67,7 @@ li a:hover {
   border: 3px solid pink;
   background: white;
 }
+
 
 
 

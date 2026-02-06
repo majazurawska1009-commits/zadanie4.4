@@ -60,13 +60,14 @@ li a:hover {
 {
   position: absolute;
   left: 25%;
-  top: 300px;
+  top: 600px;
   width: 40%;
   height: 350px;
   border: 3px solid pink;
   background: white;
   overflow: auto;
 }
+
 
 
 

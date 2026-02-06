@@ -56,19 +56,18 @@ li a:hover {
   color: white;
 }
 
-#planFrame {
-  position: fixed;
-
-  top: 240px;       
-  left: 230px;       
-
+#planFrame 
+{
+  position: absolute;
+  left: 25%;
+  top: 300px;
   width: 65%;
-  height: 360px;    
-
+  height: 350px;
   border: 3px solid pink;
   background: white;
   overflow: auto;
 }
+
 
 
 

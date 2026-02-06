@@ -1,62 +1,59 @@
-ul
-{
-float: left;
-list-style: none;
+ul {
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-li a
-{
-	display: block;
-	width: 100px;
-	font-size: 1em;
-	text-align: center;
-	text-decoration: none;
-	color: white;
-	background-color: pink;
-	padding: 5px 10px;
-	margin: 0px 0px 4px 0px;
-	border-radius: 4px;
-	box-shadow: 2px 2px 2px silver;
+li a {
+  display: block;
+  width: 150px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: pink;
+  padding: 8px 10px;
+  margin: 0 0 6px 0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px silver;
 }
 
-li a:hover
-{
-	background: #c3195d;
-	box-shadow: 0px 0px 0px;
+li a:hover {
+  background: #c3195d;
+  box-shadow: none;
 }
 
-#naglowek
-{
-	background-image: url("szkola.jpg");
-	text-align: center;
-	min-height: 100px;
-	font-size: xx-large;
-	color: teal;
+#naglowek {
+  background-image: url("szkola.jpg");
+  text-align: center;
+  min-height: 100px;
+  font-size: xx-large;
+  color: teal;
+  line-height: 100px;
 }
 
-#menu
-{
-float: left;
-width: 20%;
+#menu {
+  float: left;
+  width: 20%;
 }
 
-#informacje
-{
-	float: left;
-	width: 70%;
-	background: #ffe9e3;
-	padding: 20px;
-	margin: 5px 5px 5px 5px;
-	min-height: 100%;
+#informacje {
+  float: left;
+  width: 70%;
+  background: #ffe9e3;
+  padding: 20px;
+  margin: 5px;
+  min-height: 200px;
 }
 
-#stopka
-{
-	clear: both;
-	background: #ffcbcb;
-	text-align: center;
-	min-height: 50px;
-	color: white;
+#stopka {
+  clear: both;
+  background: #ffcbcb;
+  text-align: center;
+  min-height: 50px;
+  line-height: 50px;
+  color: white;
 }
 
 #planFrame {

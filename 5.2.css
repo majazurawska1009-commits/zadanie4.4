@@ -59,21 +59,34 @@ width: 20%;
 	color: white;
 }
 
-#frame 
+#overlay 
 {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+
+#planFrame 
+{
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 80vw;
+  width: 70vw;
   height: 80vh;
 
-  border: none;
-  display: none;
-  z-index: 1000;
+  border-radius: 10px;
+  border: 3px solid #f4a6b8;
+  background: white;
+  z-index: 999;
 }
+
 	
+
 
 
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator</title>
+
+<script>
+function oblicz(operacja) {
+    var a = parseFloat(document.getElementById("a").value);
+    var b = parseFloat(document.getElementById("b").value);
+    var wynik;
+
+    if (isNaN(a) || isNaN(b)) {
+        alert("Podaj poprawne liczby!");
+        return;
+    }
+
+    switch(operacja) {
+        case "dodaj":
+            wynik = a + b;
+            break;
+        case "odejmij":
+            wynik = a - b;
+            break;
+        case "mnoz":
+            wynik = a * b;
+            break;
+        case "dziel":
+            if (b === 0) {
+                alert("Nie można dzielić przez zero!");
+                return;
+            }
+            wynik = a / b;
+            break;
+    }
+
+    alert("Wynik: " + wynik);
+}
+</script>
+</head>
+
+<body>
+
+a = <input type="text" id="a"><br>
+b = <input type="text" id="b"><br><br>
+
+<input type="button" value="Dodaj" onclick="oblicz('dodaj')">
+<input type="button" value="Odejmij" onclick="oblicz('odejmij')">
+<input type="button" value="Mnożenie" onclick="oblicz('mnoz')">
+<input type="button" value="Dzielenie" onclick="oblicz('dziel')">
+
+</body>
+</html>

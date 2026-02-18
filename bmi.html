@@ -1,0 +1,97 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />  
+<title>Kalkulator BMI</title>
+
+<script>
+
+function bmi() {
+
+    var wzrost = parseFloat(document.Form.wzrost.value);
+    var waga = parseFloat(document.Form.waga.value);
+
+    // Sprawdzenie czy wpisano liczby
+    if (isNaN(wzrost) || isNaN(waga)) {
+        alert("Podaj poprawne wartości liczbowe!");
+        return;
+    }
+
+    // Walidacja zakresów
+    if (wzrost <= 100 || wzrost >= 250) {
+        alert("Wzrost musi być w zakresie 100 - 250 cm");
+        return;
+    }
+
+    if (waga <= 0 || waga >= 200) {
+        alert("Waga musi być w zakresie 0 - 200 kg");
+        return;
+    }
+
+    // Obliczenie BMI
+    var wynik = waga / (wzrost * wzrost / 10000);
+    wynik = wynik.toFixed(2);
+
+    // Interpretacja wyniku
+    var kategoria = "";
+
+    if (wynik < 18.5) {
+        kategoria = "Niedowaga";
+    }
+    else if (wynik < 25) {
+        kategoria = "Waga prawidłowa";
+    }
+    else if (wynik < 30) {
+        kategoria = "Nadwaga";
+    }
+    else {
+        kategoria = "Otyłość";
+    }
+
+    // Checkbox
+    var sniadanie = document.Form.sniadanie.checked ? " (po śniadaniu)" : "";
+
+    // Radio - narodowość
+    var narodowosc = "";
+    var radio = document.getElementsByName("narodowosc");
+
+    for (var i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            narodowosc = radio[i].value;
+        }
+    }
+
+    if (narodowosc == "") {
+        alert("Wybierz narodowość!");
+        return;
+    }
+
+    alert("Narodowość: " + narodowosc +
+          "\nTwoje BMI: " + wynik +
+          "\nKategoria: " + kategoria +
+          sniadanie);
+}
+
+</script>
+</head>
+
+<body>
+
+<form name="Form">
+
+Wzrost (cm)=<input type="Text" name="wzrost"><br>
+Waga (kg)=<input type="Text" name="waga"><br><br>
+
+<input type="checkbox" name="sniadanie"> Jestem po śniadaniu<br><br>
+
+Wybierz narodowość:<br>
+<input type="radio" name="narodowosc" value="Chińczyk"> Chińczyk<br>
+<input type="radio" name="narodowosc" value="Amerykanin"> Amerykanin<br>
+<input type="radio" name="narodowosc" value="Polak"> Polak<br><br>
+
+<input type="Button" value="Oblicz swoje BMI" onclick="bmi()">
+
+</form>
+
+<hr>
+</body>
+</html>

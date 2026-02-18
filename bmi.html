@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator BMI</title>
+
 <script>
 function bmi() {
 
@@ -21,15 +27,14 @@ function bmi() {
 
     var wynik = waga / (wzrost * wzrost / 10000);
 
-    // 🔹 Modyfikator śniadania
+    // +2% po śniadaniu
     if (document.getElementById("sniadanie").checked) {
-        wynik = wynik * 1.02; // +2%
+        wynik *= 1.02;
     }
 
-    // 🔹 Modyfikator narodowości
-    var radio = document.getElementsByName("narodowosc");
+    // narodowość
     var narodowosc = "";
-    var procent = 0;
+    var radio = document.getElementsByName("narodowosc");
 
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
@@ -37,16 +42,17 @@ function bmi() {
         }
     }
 
-    if (narodowosc === "Chińczyk") {
-        wynik = wynik * 0.97; 
-    }
-    else if (narodowosc === "Amerykanin") {
-        wynik = wynik * 1.03; 
-    }
-     else (narodowosc === "Polak") {
-        wynik = wynik * 1.05; 
+    if (narodowosc === "") {
+        alert("Wybierz narodowość!");
+        return;
     }
 
+    if (narodowosc === "Chińczyk") {
+        wynik *= 0.97; // -3%
+    } else if (narodowosc === "Amerykanin") {
+        wynik *= 1.03; // +3%
+    }
+    else{  wynik *= 1.05;} // 
 
     wynik = wynik.toFixed(2);
 
@@ -64,7 +70,22 @@ function bmi() {
 
     document.getElementById("wynik").innerHTML =
         "Narodowość: " + narodowosc + "<br>" +
-        "Twoje BMI (po modyfikacji): " + wynik + "<br>" +
+        "Twoje BMI: " + wynik + "<br>" +
         "Kategoria: " + kategoria;
 }
 </script>
+</head>
+
+<body>
+
+<h2>Kalkulator BMI</h2>
+
+Wzrost (cm)=<input type="number" id="wzrost"><br>
+Waga (kg)=<input type="number" id="waga"><br><br>
+
+<input type="checkbox" id="sniadanie"> Jestem po śniadaniu<br><br>
+
+Wybierz narodowość:<br>
+<input type="radio" name="narodowosc" value="Chińczyk"> Chińczyk<br>
+<input type="radio
+

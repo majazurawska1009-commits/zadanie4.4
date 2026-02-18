@@ -1,22 +1,14 @@
-<html>
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />  
-<title>Kalkulator BMI</title>
-
 <script>
-
 function bmi() {
 
-    var wzrost = parseFloat(document.Form.wzrost.value);
-    var waga = parseFloat(document.Form.waga.value);
+    var wzrost = parseFloat(document.getElementById("wzrost").value);
+    var waga = parseFloat(document.getElementById("waga").value);
 
-    // Sprawdzenie czy wpisano liczby
     if (isNaN(wzrost) || isNaN(waga)) {
         alert("Podaj poprawne wartości liczbowe!");
         return;
     }
 
-    // Walidacja zakresów
     if (wzrost <= 100 || wzrost >= 250) {
         alert("Wzrost musi być w zakresie 100 - 250 cm");
         return;
@@ -27,31 +19,17 @@ function bmi() {
         return;
     }
 
-    // Obliczenie BMI
     var wynik = waga / (wzrost * wzrost / 10000);
-    wynik = wynik.toFixed(2);
 
-    var kategoria = "";
-
-    if (wynik < 18.5) {
-        kategoria = "Niedowaga";
-    }
-    else if (wynik < 25) {
-        kategoria = "Waga prawidłowa";
-    }
-    else if (wynik < 30) {
-        kategoria = "Nadwaga";
-    }
-    else {
-        kategoria = "Otyłość";
+    // 🔹 Modyfikator śniadania
+    if (document.getElementById("sniadanie").checked) {
+        wynik = wynik * 1.02; // +2%
     }
 
-    // Checkbox
-    var sniadanie = document.Form.sniadanie.checked ? " (po śniadaniu)" : "";
-
-
-    var narodowosc = "";
+    // 🔹 Modyfikator narodowości
     var radio = document.getElementsByName("narodowosc");
+    var narodowosc = "";
+    var procent = 0;
 
     for (var i = 0; i < radio.length; i++) {
         if (radio[i].checked) {
@@ -59,35 +37,34 @@ function bmi() {
         }
     }
 
-    alert("Narodowość: " + narodowosc +
-          "\nTwoje BMI: " + wynik +
-          "\nKategoria: " + kategoria +
-          sniadanie);
+    if (narodowosc === "Chińczyk") {
+        wynik = wynik * 0.97; 
+    }
+    else if (narodowosc === "Amerykanin") {
+        wynik = wynik * 1.03; 
+    }
+     else (narodowosc === "Polak") {
+        wynik = wynik * 1.05; 
+    }
+
+
+    wynik = wynik.toFixed(2);
+
+    var kategoria = "";
+
+    if (wynik < 18.5) {
+        kategoria = "Niedowaga";
+    } else if (wynik < 25) {
+        kategoria = "Waga prawidłowa";
+    } else if (wynik < 30) {
+        kategoria = "Nadwaga";
+    } else {
+        kategoria = "Otyłość";
+    }
+
+    document.getElementById("wynik").innerHTML =
+        "Narodowość: " + narodowosc + "<br>" +
+        "Twoje BMI (po modyfikacji): " + wynik + "<br>" +
+        "Kategoria: " + kategoria;
 }
-
 </script>
-</head>
-
-<body>
-
-<form name="Form">
-
-Wzrost (cm)=<input type="Text" name="wzrost"><br>
-Waga (kg)=<input type="Text" name="waga"><br><br>
-
-<input type="checkbox" name="sniadanie"> Jestem po śniadaniu<br><br>
-
-Wybierz narodowość:<br>
-<input type="radio" name="narodowosc" value="Chińczyk"> Chińczyk<br>
-<input type="radio" name="narodowosc" value="Amerykanin"> Amerykanin<br>
-<input type="radio" name="narodowosc" value="Polak"> Polak<br><br>
-
-<input type="Button" value="Oblicz swoje BMI" onclick="bmi()">
-
-</form>
-
-<hr>
-</body>
-
-</html>
-

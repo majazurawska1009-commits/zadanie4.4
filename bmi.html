@@ -59,27 +59,6 @@ function bmi() {
         }
     }
 
-    if (narodowosc == "") {
-        alert("Wybierz narodowość!");
-        return;
-    }
-   if (narodowosc == "Chińczyk") {
-    wynik = wynik.toFixed(2)-20%;
-
-        return;
-    }   if (narodowosc == "Polak") {
-        wynik = wynik.toFixed(2)-10%;
-        return;
-    }
-    if (narodowosc == "Amerykanin") {
-        wynik = wynik.toFixed(2)-5%;
-        return; }
-    if(var sniadanie = document.Form.sniadanie.checked)
-    {
-      wynik = wynik.toFixed(2)-2%;
-    return;}
-
-
     alert("Narodowość: " + narodowosc +
           "\nTwoje BMI: " + wynik +
           "\nKategoria: " + kategoria +
@@ -111,3 +90,4 @@ Wybierz narodowość:<br>
 </body>
 
 </html>
+
